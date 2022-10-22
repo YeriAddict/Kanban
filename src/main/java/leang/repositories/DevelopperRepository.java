@@ -1,5 +1,9 @@
 package leang.repositories;
 
-public class DevelopperRepository {
+import leang.entities.Developper;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DevelopperRepository extends JpaRepository<Developper, Long>{
+    
 }
