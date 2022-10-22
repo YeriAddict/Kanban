@@ -16,4 +16,10 @@ public class ChangeLog {
     
     public ChangeLog() {
     }
+
+    public Long getId() {return id;}
+    public void setId(Long id) {this.id = id;}
+
+    public Date getOccured() {return occured;}
+    public void setOccured(Date occured) {this.occured = occured;}
 }
