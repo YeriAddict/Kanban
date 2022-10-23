@@ -1,6 +1,6 @@
 package leang.entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,11 +16,19 @@ public class Developper {
     private String lastname;
     private String password;
     private String email;
-    private Date startContract;
+    private LocalDate startContract;
     
     public Developper() {
     }
 
+    public Developper(String firstname, String lastname, String password, String email, LocalDate startContract) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
+        this.email = email;
+        this.startContract = startContract;
+    }
+    
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
 
@@ -36,6 +44,6 @@ public class Developper {
     public String getEmail() {return email;}
     public void setEmail(String email) {this.email = email;}
 
-    public Date getStartContract() {return startContract;}
-    public void setStartContract(Date startContract) {this.startContract = startContract;}
+    public LocalDate getStartContract() {return startContract;}
+    public void setStartContract(LocalDate startContract) {this.startContract = startContract;}
 }

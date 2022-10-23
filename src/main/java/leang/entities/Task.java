@@ -1,6 +1,6 @@
 package leang.entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,9 +15,17 @@ public class Task {
     private String title;
     private Integer nbHoursForecast;
     private Integer nbHoursReal;
-    private Date created;
+    private LocalDate created;
     
     public Task() {
+    }
+    
+    public Task(Long id, String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
+        this.id = id;
+        this.title = title;
+        this.nbHoursForecast = nbHoursForecast;
+        this.nbHoursReal = nbHoursReal;
+        this.created = created;
     }
 
     public Long getId() {return id;}
@@ -32,6 +40,6 @@ public class Task {
     public Integer getNbHoursReal() {return nbHoursReal;}
     public void setNbHoursReal(Integer nbHoursReal) {this.nbHoursReal = nbHoursReal;}
 
-    public Date getCreated() {return created;}
-    public void setCreated(Date created) {this.created = created;}
+    public LocalDate getCreated() {return created;}
+    public void setCreated(LocalDate created) {this.created = created;}
 }
