@@ -10,8 +10,8 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity(name = "DEVELOPPERS")
-public class Developper {
+@Entity(name = "DEVELOPERS")
+public class Developer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @GenericGenerator(name = "native", strategy = "native")
@@ -28,10 +28,10 @@ public class Developper {
     @Column(name = "CONTRACT_START")
     private LocalDate startContract;
     
-    public Developper() {
+    public Developer() {
     }
 
-    public Developper(String firstname, String lastname, String password, String email, LocalDate startContract) {
+    public Developer(String firstname, String lastname, String password, String email, LocalDate startContract) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.password = password;
