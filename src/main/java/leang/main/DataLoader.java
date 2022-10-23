@@ -36,12 +36,16 @@ public class DataLoader implements CommandLineRunner {
     
     @Override
     public void run(String... strings) throws Exception {
-        developperRepository.save(new Developper("Joo-hyun", "Bae", "Irene", "rv_irene@gmail.com", LocalDate.of(1991, Month.MARCH, 29)));
-        developperRepository.save(new Developper("Seul-gi", "Kang", "Seulgi", "rv_seulgi@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 10)));
-        developperRepository.save(new Developper("Seung-wan", "Son", "Wendy", "rv_wendy@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 21)));
-        developperRepository.save(new Developper("Soo-young", "Park", "Joy", "rv_joy@gmail.com", LocalDate.of(1996, Month.SEPTEMBER, 3)));
-        developperRepository.save(new Developper("Yerim", "Kim", "Yeri", "rv_yeri@gmail.com", LocalDate.of(1999, Month.MARCH, 5)));
+        Developper irene = new Developper("Joo-hyun", "Bae", "Irene", "rv_irene@gmail.com", LocalDate.of(1991, Month.MARCH, 29));
+        Developper seulgi = new Developper("Seul-gi", "Kang", "Seulgi", "rv_seulgi@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 10));
+        Developper wendy = new Developper("Seung-wan", "Son", "Wendy", "rv_wendy@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 21));
+        Developper joy = new Developper("Soo-young", "Park", "Joy", "rv_joy@gmail.com", LocalDate.of(1996, Month.SEPTEMBER, 3));
+        Developper yeri = new Developper("Yerim", "Kim", "Yeri", "rv_yeri@gmail.com", LocalDate.of(1999, Month.MARCH, 5));
         
+        developperRepository.save(irene);
+        developperRepository.save(seulgi);
+        developperRepository.save(wendy);
+        developperRepository.save(joy);
+        developperRepository.save(yeri);
     }
-    
 }
