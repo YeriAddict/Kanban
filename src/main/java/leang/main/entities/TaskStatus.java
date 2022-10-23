@@ -1,4 +1,4 @@
-package leang.entities;
+package leang.main.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

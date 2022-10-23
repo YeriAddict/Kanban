@@ -1,4 +1,4 @@
-package leang.entities;
+package leang.main.entities;
 
 import java.time.LocalDate;
 
