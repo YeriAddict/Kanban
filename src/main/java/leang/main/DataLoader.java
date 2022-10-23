@@ -36,8 +36,12 @@ public class DataLoader implements CommandLineRunner {
     
     @Override
     public void run(String... strings) throws Exception {
-        developperRepository.save(new Developper("Yerim", "Kim", "azerty", "a@gmail.com", LocalDate.of(2011, Month.NOVEMBER, 11)));
-        developperRepository.save(new Developper("Park", "Sooyoung", "azerty", "b@gmail.com", LocalDate.of(2012, Month.DECEMBER, 12)));
+        developperRepository.save(new Developper("Joo-hyun", "Bae", "Irene", "rv_irene@gmail.com", LocalDate.of(1991, Month.MARCH, 29)));
+        developperRepository.save(new Developper("Seul-gi", "Kang", "Seulgi", "rv_seulgi@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 10)));
+        developperRepository.save(new Developper("Seung-wan", "Son", "Wendy", "rv_wendy@gmail.com", LocalDate.of(1994, Month.FEBRUARY, 21)));
+        developperRepository.save(new Developper("Soo-young", "Park", "Joy", "rv_joy@gmail.com", LocalDate.of(1996, Month.SEPTEMBER, 3)));
+        developperRepository.save(new Developper("Yerim", "Kim", "Yeri", "rv_yeri@gmail.com", LocalDate.of(1999, Month.MARCH, 5)));
+        
     }
     
 }
