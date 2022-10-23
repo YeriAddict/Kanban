@@ -8,10 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity(name = "DEVELOPPERS")
 public class Developper {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "ID")
     private Long id;
     @Column(name = "FIRSTNAME")
     private String firstname;

@@ -6,10 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 @Entity(name = "TASK_STATUS")
 public class TaskStatus {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "ID")
     private Long id;
     @Column(name = "LABEL")
     private String label;
