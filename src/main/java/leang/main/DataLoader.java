@@ -3,25 +3,35 @@ package leang.main;
 import java.time.LocalDate;
 import java.time.Month;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import leang.entities.Developper;
-import leang.repositories.ChangeLogRepository;
-import leang.repositories.DevelopperRepository;
-import leang.repositories.TaskRepository;
-import leang.repositories.TaskStatusRepository;
-import leang.repositories.TaskTypeRepository;
+import leang.main.entities.Developper;
+import leang.main.repositories.ChangeLogRepository;
+import leang.main.repositories.DevelopperRepository;
+import leang.main.repositories.TaskRepository;
+import leang.main.repositories.TaskStatusRepository;
+import leang.main.repositories.TaskTypeRepository;
 
 @Component
 public class DataLoader implements CommandLineRunner {
     
     private DevelopperRepository developperRepository;
+    private TaskRepository taskRepository;
+    private TaskStatusRepository taskStatusRepository;
+    private TaskTypeRepository taskTypeRepository;
+    private ChangeLogRepository changeLogRepository;
     
-    public DataLoader(DevelopperRepository developperRepository) {
+    public DataLoader(DevelopperRepository developperRepository,
+            TaskRepository taskRepository,
+            TaskStatusRepository taskStatusRepository,
+            TaskTypeRepository taskTypeRepository,
+            ChangeLogRepository changeLogRepository) {
         this.developperRepository = developperRepository;
+        this.taskRepository = taskRepository;
+        this.taskStatusRepository = taskStatusRepository;
+        this.taskTypeRepository = taskTypeRepository;
+        this.changeLogRepository = changeLogRepository;
     }
     
     @Override
