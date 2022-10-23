@@ -2,19 +2,24 @@ package leang.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "TASKS")
 public class Task {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(name = "TITLE")
     private String title;
+    @Column(name = "NB_HOURS_FORECAST")
     private Integer nbHoursForecast;
+    @Column(name = "NB_HOURS_REAL")
     private Integer nbHoursReal;
+    @Column(name = "CREATION_DATE")
     private LocalDate created;
     
     public Task() {

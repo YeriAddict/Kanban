@@ -2,20 +2,26 @@ package leang.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "DEVELOPPERS")
 public class Developper {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(name = "FIRSTNAME")
     private String firstname;
+    @Column(name = "LAST_NAME")
     private String lastname;
+    @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "CONTRACT_START")
     private LocalDate startContract;
     
     public Developper() {
