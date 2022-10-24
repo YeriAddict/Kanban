@@ -15,6 +15,8 @@ import leang.main.repositories.DeveloperRepository;
 import leang.main.repositories.TaskRepository;
 import leang.main.repositories.TaskStatusRepository;
 import leang.main.repositories.TaskTypeRepository;
+import leang.main.structs.Status;
+import leang.main.structs.Type;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -55,17 +57,17 @@ public class DataLoader implements CommandLineRunner {
         taskRepository.save(task_one);
         taskRepository.save(task_two);
         
-        TaskStatus status_one = new TaskStatus("WORK_TO_DO");
-        TaskStatus status_two = new TaskStatus("WORK_ON_PROGRESS");
-        TaskStatus status_three = new TaskStatus("WORK_TO_TEST");
-        TaskStatus status_four = new TaskStatus("WORK_DONE");
+        TaskStatus status_one = new TaskStatus(Status.STATUS_ONE_ID, Status.STATUS_ONE_LABEL);
+        TaskStatus status_two = new TaskStatus(Status.STATUS_TWO_ID, Status.STATUS_TWO_LABEL);
+        TaskStatus status_three = new TaskStatus(Status.STATUS_THREE_ID, Status.STATUS_THREE_LABEL);
+        TaskStatus status_four = new TaskStatus(Status.STATUS_FOUR_ID, Status.STATUS_FOUR_LABEL);
         taskStatusRepository.save(status_one);
         taskStatusRepository.save(status_two);
         taskStatusRepository.save(status_three);
         taskStatusRepository.save(status_four);
         
-        TaskType type_one = new TaskType("FEATURE_TO_CREATE");
-        TaskType type_two = new TaskType("FEATURE_TO_FIX");
+        TaskType type_one = new TaskType(Type.TYPE_ONE_ID, Type.TYPE_ONE_LABEL);
+        TaskType type_two = new TaskType(Type.TYPE_TWO_ID, Type.TYPE_TWO_LABEL);
         taskTypeRepository.save(type_one);
         taskTypeRepository.save(type_two);
     }
