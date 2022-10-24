@@ -24,7 +24,7 @@ public class TaskRepositoryTest {
     
     @Test 
     public void saveTest() {
-        Task task_three = new Task("Queendom", 0, 0, LocalDate.of(2021, Month.AUGUST, 21)); 
+        Task task_three = new Task("ReVe Festival Finale 2019", 0, 0, LocalDate.of(2019, Month.DECEMBER, 23)); 
         this.taskRepository.save(task_three);
         Assert.assertEquals(3, this.taskRepository.findAll().size(), 0);
         Assert.assertNotEquals(4, this.taskRepository.findAll().size(), 0);
