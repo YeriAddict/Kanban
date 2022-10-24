@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import leang.main.entities.Task;
 import leang.main.repositories.TaskRepository;
+import leang.main.services.TaskService;
 
 @Service
-public class TaskServiceImpl {
+public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private TaskRepository taskRepository;
