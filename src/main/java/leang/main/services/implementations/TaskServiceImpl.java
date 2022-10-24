@@ -17,4 +17,9 @@ public class TaskServiceImpl {
     public Collection<Task> findAllTasks(){
         return this.taskRepository.findAll();
     }
+    
+    public Task findTask(long id) {
+        return this.taskRepository.getReferenceById(id);
+    }
+
 }
