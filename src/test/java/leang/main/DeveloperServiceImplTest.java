@@ -11,7 +11,7 @@ import leang.main.entities.Developer;
 import leang.main.services.DevelopperService;
 
 @SpringBootTest
-public class DeveloperServiceTest {
+public class DeveloperServiceImplTest {
 
     @Autowired
     private DevelopperService developerService;
