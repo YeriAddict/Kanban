@@ -49,8 +49,8 @@ public class DataLoader implements CommandLineRunner {
         developerRepository.save(joy);
         developerRepository.save(yeri);
         
-        Task task_one = new Task("MIK Festival 2022", 0, 0, LocalDate.of(2022, Month.JULY, 30));
-        Task task_two = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
+        Task task_one = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
+        Task task_two = new Task("Queendom 2021", 0, 0, LocalDate.of(2021, Month.AUGUST, 21));
         taskRepository.save(task_one);
         taskRepository.save(task_two);
     }
