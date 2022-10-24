@@ -31,8 +31,6 @@ public class Task {
     private LocalDate created;
     @ManyToMany
     private Set<Developer> developers;
-    @OneToMany
-    private Set<ChangeLog> changeLogs;
     @ManyToOne
     private TaskStatus taskStatus;
     @ManyToOne
@@ -40,7 +38,6 @@ public class Task {
     
     public Task() {
         this.developers = new HashSet<>();
-        this.changeLogs = new HashSet<>();
     }
     
     public Task(String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
