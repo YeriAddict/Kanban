@@ -41,7 +41,6 @@ public class Task {
     
     public Task(String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
         this.developers = new HashSet<>();
-        this.id = id;
         this.title = title;
         this.nbHoursForecast = nbHoursForecast;
         this.nbHoursReal = nbHoursReal;
