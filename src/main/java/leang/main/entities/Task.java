@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity(name = "TASKS")
@@ -30,6 +31,8 @@ public class Task {
     private LocalDate created;
     @ManyToMany
     private Set<Developer> developers;
+    @OneToMany
+    private Set<ChangeLog> changeLogs;
     @ManyToOne
     private TaskStatus taskStatus;
     @ManyToOne
@@ -37,6 +40,7 @@ public class Task {
     
     public Task() {
         this.developers = new HashSet<>();
+        this.changeLogs = new HashSet<>();
     }
     
     public Task(String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {

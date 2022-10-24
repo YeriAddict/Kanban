@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity(name = "CHANGELOG")
@@ -18,8 +19,19 @@ public class ChangeLog {
     private Long id;
     @Column(name = "OCCURANCE_DATE")
     private LocalDate occured;
-    
+    @ManyToOne
+    private Task task;
+    @ManyToOne
+    private TaskStatus sourceStatus;
+    @ManyToOne
+    private TaskStatus targetStatus;
+
     public ChangeLog() {
+    }
+    
+    public ChangeLog(Long id, LocalDate occured) {
+        this.id = id;
+        this.occured = occured;
     }
 
     public Long getId() {return id;}
@@ -27,4 +39,13 @@ public class ChangeLog {
 
     public LocalDate getOccured() {return occured;}
     public void setOccured(LocalDate occured) {this.occured = occured;}
+
+    public Task getTask() {return task;}
+    public void setTask(Task task) {this.task = task;}
+
+    public TaskStatus getSourceStatus() {return sourceStatus;}
+    public void setSourceStatus(TaskStatus sourceStatus) {this.sourceStatus = sourceStatus;}
+    
+    public TaskStatus getTargetStatus() {return targetStatus;}
+    public void setTargetStatus(TaskStatus targetStatus) {this.targetStatus = targetStatus;}
 }
