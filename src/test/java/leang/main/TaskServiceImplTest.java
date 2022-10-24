@@ -20,9 +20,10 @@ public class TaskServiceImplTest {
     private TaskService taskService;
     
     @Test
-    public void findAllDevelopersTest() {
+    public void findAllTasksTest() {
         Collection<Task> developersListTest = this.taskService.findAllTasks();
         Assert.assertEquals(2, developersListTest.size(), 0);
         Assert.assertNotEquals(3, developersListTest.size(), 0);
     }
+    
 }
