@@ -39,7 +39,7 @@ public class Task {
         this.developers = new HashSet<>();
     }
     
-    public Task(Long id, String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
+    public Task(String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
         this.developers = new HashSet<>();
         this.id = id;
         this.title = title;
