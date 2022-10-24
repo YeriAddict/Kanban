@@ -63,7 +63,17 @@ public class Task {
     public LocalDate getCreated() {return created;}
     public void setCreated(LocalDate created) {this.created = created;}
     
+    public Set<Developer> getDevelopers() {return developers;}
+    public void setDevelopers(Set<Developer> developers) {this.developers = developers;}
+    
+    public TaskStatus getTaskStatus() {return taskStatus;}
+    public void setTaskStatus(TaskStatus taskStatus) {this.taskStatus = taskStatus;}
+
+    public TaskType getTaskType() {return taskType;}
+    public void setTaskType(TaskType taskType) {this.taskType = taskType;}
+    
     public void addDeveloper(Developer developer) {
         this.developers.add(developer);
     }
+
 }
