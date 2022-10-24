@@ -17,5 +17,6 @@ class TaskTest {
         Task taskTest = new Task();
         taskTest.addDeveloper(developperTest);
         Assert.assertEquals(1, taskTest.getDevelopers().size(),0);
+        Assert.assertNotEquals(2, taskTest.getDevelopers().size(),0);
     }
 }
