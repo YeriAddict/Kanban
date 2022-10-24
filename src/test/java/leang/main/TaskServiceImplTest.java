@@ -1,19 +1,19 @@
 package leang.main;
 
 import java.util.Collection;
-import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import leang.main.entities.Developer;
 import leang.main.entities.Task;
-import leang.main.repositories.TaskRepository;
 import leang.main.services.TaskService;
 
 @SpringBootTest
+@Transactional
 public class TaskServiceImplTest {
 
     @Autowired
@@ -26,4 +26,9 @@ public class TaskServiceImplTest {
         Assert.assertNotEquals(3, developersListTest.size(), 0);
     }
     
+    @Test
+    public void findTaskTest() {
+        Task task = this.taskService.findTask(1);
+        Assert.assertEquals("ReVe Festival 2022", task.getTitle());
+    }
 }
