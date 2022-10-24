@@ -18,6 +18,11 @@ public class TaskStatus {
     private String label;
     
     public TaskStatus() {
+        
+    }
+    
+    public TaskStatus(String label) {
+        this.label = label;
     }
 
     public Long getId() {return id;}

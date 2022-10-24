@@ -18,6 +18,11 @@ public class TaskType {
     private String label;
     
     public TaskType() {
+        
+    }
+    
+    public TaskType(String label) {
+        this.label = label;
     }
 
     public Long getId() {return id;}
