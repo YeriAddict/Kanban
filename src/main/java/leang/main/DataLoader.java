@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import leang.main.entities.Developer;
+import leang.main.entities.Task;
 import leang.main.repositories.ChangeLogRepository;
 import leang.main.repositories.DeveloperRepository;
 import leang.main.repositories.TaskRepository;
@@ -47,5 +48,10 @@ public class DataLoader implements CommandLineRunner {
         developerRepository.save(wendy);
         developerRepository.save(joy);
         developerRepository.save(yeri);
+        
+        Task task_one = new Task("MIK Festival 2022", 0, 0, LocalDate.of(2022, Month.JULY, 30));
+        Task task_two = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
+        taskRepository.save(task_one);
+        taskRepository.save(task_two);
     }
 }
