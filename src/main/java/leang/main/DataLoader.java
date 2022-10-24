@@ -52,11 +52,6 @@ public class DataLoader implements CommandLineRunner {
         developerRepository.save(joy);
         developerRepository.save(yeri);
         
-        Task task_one = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
-        Task task_two = new Task("Queendom 2021", 0, 0, LocalDate.of(2021, Month.AUGUST, 21));
-        taskRepository.save(task_one);
-        taskRepository.save(task_two);
-        
         TaskStatus status_one = new TaskStatus(Status.STATUS_ONE_ID, Status.STATUS_ONE_LABEL);
         TaskStatus status_two = new TaskStatus(Status.STATUS_TWO_ID, Status.STATUS_TWO_LABEL);
         TaskStatus status_three = new TaskStatus(Status.STATUS_THREE_ID, Status.STATUS_THREE_LABEL);
@@ -65,6 +60,13 @@ public class DataLoader implements CommandLineRunner {
         taskStatusRepository.save(status_two);
         taskStatusRepository.save(status_three);
         taskStatusRepository.save(status_four);
+        
+        Task task_one = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
+        task_one.setTaskStatus(status_two);
+        Task task_two = new Task("Queendom 2021", 0, 0, LocalDate.of(2021, Month.AUGUST, 21));
+        task_two.setTaskStatus(status_three);
+        taskRepository.save(task_one);
+        taskRepository.save(task_two);
         
         TaskType type_one = new TaskType(Type.TYPE_ONE_ID, Type.TYPE_ONE_LABEL);
         TaskType type_two = new TaskType(Type.TYPE_TWO_ID, Type.TYPE_TWO_LABEL);
