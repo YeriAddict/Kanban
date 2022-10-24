@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import leang.main.entities.Developer;
 import leang.main.entities.Task;
 import leang.main.entities.TaskStatus;
+import leang.main.entities.TaskType;
 import leang.main.repositories.ChangeLogRepository;
 import leang.main.repositories.DeveloperRepository;
 import leang.main.repositories.TaskRepository;
@@ -62,5 +63,10 @@ public class DataLoader implements CommandLineRunner {
         taskStatusRepository.save(status_two);
         taskStatusRepository.save(status_three);
         taskStatusRepository.save(status_four);
+        
+        TaskType type_one = new TaskType("FEATURE_TO_CREATE");
+        TaskType type_two = new TaskType("FEATURE_TO_FIX");
+        taskTypeRepository.save(type_one);
+        taskTypeRepository.save(type_two);
     }
 }
