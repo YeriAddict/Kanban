@@ -7,15 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.SequenceGenerator;
 
 @Entity(name = "DEVELOPERS")
 public class Developer {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @GenericGenerator(name = "native", strategy = "native")
-    @Column(name = "ID")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "developer_generator")
+    @SequenceGenerator(name="developer_generator", sequenceName = "developer_sequence", allocationSize=50)
+    @Column(name = "ID", updatable = false, nullable = false)
     private Long id;
     @Column(name = "FIRSTNAME")
     private String firstname;

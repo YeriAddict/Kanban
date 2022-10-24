@@ -10,15 +10,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity(name = "TASKS")
 public class Task {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @GenericGenerator(name = "native", strategy = "native")
-    @Column(name = "ID")
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "task_generator")
+    @SequenceGenerator(name="task_generator", sequenceName = "task_sequence", allocationSize=50)
+    @Column(name = "ID", updatable = false, nullable = false)
     private Long id;
     @Column(name = "TITLE")
     private String title;
@@ -30,12 +30,17 @@ public class Task {
     private LocalDate created;
     @ManyToMany
     private Set<Developer> developers;
+    @ManyToOne
+    private TaskStatus taskStatus;
+    @ManyToOne
+    private TaskType taskType;
     
     public Task() {
         this.developers = new HashSet<>();
     }
     
     public Task(Long id, String title, Integer nbHoursForecast, Integer nbHoursReal, LocalDate created) {
+        this.developers = new HashSet<>();
         this.id = id;
         this.title = title;
         this.nbHoursForecast = nbHoursForecast;
