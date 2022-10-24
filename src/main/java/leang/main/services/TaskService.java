@@ -14,7 +14,11 @@ public interface TaskService {
     public TaskStatus findTaskStatus(long id);
     public Collection<TaskType> findAllTaskTypes();
     public TaskType findTaskType(long id);
-    public Task moveRightTask(Task task);
+    public String modifyLeftNewStatus(Task task);
+    public String modifyRightNewStatus(Task task);
+    public TaskStatus changeStatus(String newStatus);
+    public Task changeTask(Task task, TaskStatus outputStatus);
     public Task moveLeftTask(Task task);
+    public Task moveRightTask(Task task);
     
 }
