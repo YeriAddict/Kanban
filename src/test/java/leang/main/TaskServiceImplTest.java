@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import leang.main.entities.Task;
 import leang.main.entities.TaskStatus;
+import leang.main.entities.TaskType;
 import leang.main.services.TaskService;
 
 @SpringBootTest
@@ -44,5 +45,18 @@ public class TaskServiceImplTest {
     public void findTaskStatusTest() {
         TaskStatus taskStatus = this.taskService.findTaskStatus(1);
         Assert.assertEquals("WORK_TO_DO", taskStatus.getLabel());
+    }
+    
+    @Test
+    public void findAllTaskTypesTest() {
+        Collection<TaskType> taskTypeListTest = this.taskService.findAllTaskTypes();
+        Assert.assertEquals(2, taskTypeListTest.size(), 0);
+        Assert.assertNotEquals(3, taskTypeListTest.size(), 0);
+    }
+    
+    @Test
+    public void findTaskTypeTest() {
+        TaskType taskType = this.taskService.findTaskType(1);
+        Assert.assertEquals("FEATURE_TO_CREATE", taskType.getLabel());
     }
 }
