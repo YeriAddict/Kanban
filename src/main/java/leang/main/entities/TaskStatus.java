@@ -21,7 +21,8 @@ public class TaskStatus {
         
     }
     
-    public TaskStatus(String label) {
+    public TaskStatus(Long id, String label) {
+        this.id = id;
         this.label = label;
     }
 

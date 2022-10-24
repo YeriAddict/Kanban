@@ -21,7 +21,8 @@ public class TaskType {
         
     }
     
-    public TaskType(String label) {
+    public TaskType(Long id, String label) {
+        this.id = id;
         this.label = label;
     }
 
