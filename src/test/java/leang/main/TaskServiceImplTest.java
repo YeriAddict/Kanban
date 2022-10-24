@@ -59,4 +59,34 @@ public class TaskServiceImplTest {
         TaskType taskType = this.taskService.findTaskType(1);
         Assert.assertEquals("FEATURE_TO_CREATE", taskType.getLabel());
     }
+    
+    @Test
+    public void modifyLeftNewStatusTest() {
+        String string = this.taskService.modifyLeftNewStatus(this.taskService.findTask(1));
+        Assert.assertEquals("WORK_TO_DO", string);
+    }
+    
+    @Test
+    public void modifyRightNewStatusTest() {
+        String string = this.taskService.modifyRightNewStatus(this.taskService.findTask(1));
+        Assert.assertEquals("WORK_TO_TEST", string);
+    }
+    
+    @Test
+    public void changeStatusTest() {
+        TaskStatus status = this.taskService.changeStatus("WORK_TO_TEST");
+        Assert.assertEquals(3, status.getId(), 0);
+    }
+    
+    @Test
+    public void moveLeftTaskTest() {
+        Task task = this.taskService.moveLeftTask(this.taskService.findTask(1));
+        Assert.assertEquals("WORK_TO_DO", task.getTaskStatus().getLabel());
+    }
+    
+    @Test
+    public void moveRightTaskTest() {
+        Task task = this.taskService.moveRightTask(this.taskService.findTask(1));
+        Assert.assertEquals("WORK_TO_TEST", task.getTaskStatus().getLabel());
+    }
 }
