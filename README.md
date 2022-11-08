@@ -1,4 +1,4 @@
-# Kanban - LEANG Denis
+# Kanban - LEANG Denis (WORK IN PROGRESS)
 
 <!-- TABLE OF CONTENTS -->
 <details>
