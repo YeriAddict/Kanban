@@ -30,6 +30,10 @@
 
 This Kanban is built with Java and Spring Boot.
 
+Session 1 and 2 : Last commit on the 24th of October
+Session 3 and 4 : 
+Session 5 : 
+
 ### Built With
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
