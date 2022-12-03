@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import leang.main.entities.Developer;
 
 @Service
-public interface DevelopperService {
+public interface DeveloperService {
     
     public List<Developer> findAllDevelopers();
     

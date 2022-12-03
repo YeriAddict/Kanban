@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 import leang.main.entities.Developer;
 import leang.main.repositories.DeveloperRepository;
-import leang.main.services.DevelopperService;
+import leang.main.services.DeveloperService;
 
 @Service
-public class DeveloperServiceImpl implements DevelopperService {
+public class DeveloperServiceImpl implements DeveloperService {
     
     @Autowired
     private DeveloperRepository developerRepository;

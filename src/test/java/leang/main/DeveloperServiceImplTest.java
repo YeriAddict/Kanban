@@ -8,13 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import leang.main.entities.Developer;
-import leang.main.services.DevelopperService;
+import leang.main.services.DeveloperService;
 
 @SpringBootTest
 public class DeveloperServiceImplTest {
 
     @Autowired
-    private DevelopperService developerService;
+    private DeveloperService developerService;
     
     @Test
     public void findAllDevelopersTest() {
