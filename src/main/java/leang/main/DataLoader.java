@@ -70,8 +70,6 @@ public class DataLoader implements CommandLineRunner {
         task_one.setTaskStatus(status_two);
         task_one.setTaskType(type_one);
         task_one.addDeveloper(yeri);
-        task_one.addDeveloper(joy);
-        task_one.addDeveloper(wendy);
         Task task_two = new Task("Queendom 2021", 0, 0, LocalDate.of(2021, Month.AUGUST, 21));
         task_two.setTaskStatus(status_three);
         task_two.setTaskType(type_two);
