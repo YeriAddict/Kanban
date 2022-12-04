@@ -13,7 +13,6 @@ import java.time.Month;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +24,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 
+import leang.main.entities.Developer;
 import leang.main.entities.Task;
 import leang.main.entities.TaskStatus;
 import leang.main.entities.TaskType;
+import leang.main.services.DeveloperService;
 import leang.main.services.TaskService;
 import leang.main.structs.Status;
 import leang.main.structs.Type;
@@ -41,6 +42,9 @@ public class TaskControllerTest {
     
     @Autowired
     private TaskService taskService;
+    
+    @Autowired
+    private DeveloperService developerService;
     
     @Test
     public void findAllTasksTest() throws Exception {
@@ -87,6 +91,9 @@ public class TaskControllerTest {
         Task taskTest = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
         taskTest.setTaskStatus(new TaskStatus(Status.STATUS_TWO_ID, Status.STATUS_TWO_LABEL));
         taskTest.setTaskType(new TaskType(Type.TYPE_ONE_ID, Type.TYPE_ONE_LABEL));
+        Collection<Developer> developers = this.developerService.findAllDevelopers();
+        Developer dev = developers.iterator().next();
+        taskTest.addDeveloper(dev);
         ObjectMapper mapper = JsonMapper.builder()
                 .findAndAddModules()
                 .build();
