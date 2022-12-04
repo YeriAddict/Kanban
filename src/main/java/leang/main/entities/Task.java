@@ -12,6 +12,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -24,14 +29,24 @@ public class Task {
     @Column(name = "ID", updatable = false, nullable = false)
     private Long id;
     @Column(name = "TITLE")
+    @NotNull(message = "Title cannot be null")
+    @NotEmpty(message = "Title cannot be empty")
+    @Size(min = 1, max = 30, message = "must be between 1 and 30 characters")
     private String title;
     @Column(name = "NB_HOURS_FORECAST")
+    @NotNull(message = "nbHoursForecast cannot be null")
+    @Min(value = 0, message = "nbHoursForecast should not be less than 0")
+    @Max(value = 200, message = "nbHoursForecast should not be greater than 200")
     private Integer nbHoursForecast;
     @Column(name = "NB_HOURS_REAL")
+    @NotNull(message = "nbHoursReal cannot be null")
+    @Min(value = 0, message = "nbHoursReal should not be less than 0")
+    @Max(value = 200, message = "nbHoursReal should not be greater than 200")
     private Integer nbHoursReal;
     @Column(name = "CREATION_DATE")
     private LocalDate created;
     @ManyToMany
+    @NotEmpty(message = "developers cannot be empty")
     private Set<Developer> developers;
     @ManyToOne
     private TaskStatus taskStatus;
