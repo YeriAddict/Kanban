@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,14 +27,29 @@ public class TaskController {
         return taskService.findAllTasks();
     }
     
+    @GetMapping("/tasks/{id}")
+    Task findTask(@PathVariable long id) {
+        return taskService.findTask(id);
+    }
+    
     @GetMapping("/task_status")
     Collection<TaskStatus> findAllTaskStatus(){
         return taskService.findAllTaskStatus();
     }
     
+    @GetMapping("/task_status/{id}")
+    TaskStatus findTaskStatus(@PathVariable long id) {
+        return taskService.findTaskStatus(id);
+    }
+    
     @GetMapping("/task_types")
     Collection<TaskType> findAllTaskTypes(){
         return taskService.findAllTaskTypes();
+    }
+    
+    @GetMapping("/task_types/{id}")
+    TaskType findTaskType(@PathVariable long id) {
+        return taskService.findTaskType(id);
     }
 
     @PostMapping("/tasks" )
