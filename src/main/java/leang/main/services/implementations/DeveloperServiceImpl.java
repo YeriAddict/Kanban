@@ -18,4 +18,8 @@ public class DeveloperServiceImpl implements DeveloperService {
     public List<Developer> findAllDevelopers(){
         return this.developerRepository.findAll();
     }
+    
+    public Developer findDeveloper(long id) {
+        return this.developerRepository.getReferenceById(id);
+    }
 }

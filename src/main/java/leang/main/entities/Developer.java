@@ -9,7 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity(name = "DEVELOPERS")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Developer {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "developer_generator")
