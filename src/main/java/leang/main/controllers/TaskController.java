@@ -5,9 +5,12 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import leang.main.entities.Task;
+import leang.main.entities.TaskStatus;
+import leang.main.entities.TaskType;
 import leang.main.services.TaskService;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -20,6 +23,16 @@ public class TaskController {
     @GetMapping("/tasks")
     Collection<Task> findAllTasks(){
         return taskService.findAllTasks();
+    }
+    
+    @GetMapping("/task_status")
+    Collection<TaskStatus> findAllTaskStatus(){
+        return taskService.findAllTaskStatus();
+    }
+    
+    @GetMapping("/task_types")
+    Collection<TaskType> findAllTaskTypes(){
+        return taskService.findAllTaskTypes();
     }
 
 }

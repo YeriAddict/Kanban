@@ -37,4 +37,24 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$[0].taskType.label", is("FEATURE_TO_CREATE")));
     }
     
+    @Test
+    public void findAllTaskStatusTest() throws Exception {
+        
+        mvc.perform(get("/task_status")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$[0].label", is("WORK_TO_DO")));
+    }
+    
+    @Test
+    public void findAllTaskTypesTest() throws Exception {
+        
+        mvc.perform(get("/task_types")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$[0].label", is("FEATURE_TO_CREATE")));
+    }
+    
 }
