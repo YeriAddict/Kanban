@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -57,4 +58,20 @@ public class TaskController {
         return this.taskService.createTask(task);
     }
     
+    @PatchMapping("/tasks/{id}")
+    Task moveTask(@RequestBody String instruction, @PathVariable long id) {
+        Task task = taskService.findTask(id);
+        
+        if(instruction.equals("LEFT")) {
+            task = this.taskService.moveLeftTask(task);
+        }
+        else if(instruction.equals("RIGHT")) {
+            task = this.taskService.moveRightTask(task);
+        }
+        else{
+            throw new IllegalStateException();
+        }
+        
+        return task;
+    }
 }
