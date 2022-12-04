@@ -69,9 +69,15 @@ public class DataLoader implements CommandLineRunner {
         Task task_one = new Task("ReVe Festival 2022", 0, 0, LocalDate.of(2022, Month.MARCH, 22));
         task_one.setTaskStatus(status_two);
         task_one.setTaskType(type_one);
+        task_one.addDeveloper(yeri);
+        task_one.addDeveloper(joy);
+        task_one.addDeveloper(wendy);
         Task task_two = new Task("Queendom 2021", 0, 0, LocalDate.of(2021, Month.AUGUST, 21));
         task_two.setTaskStatus(status_three);
         task_two.setTaskType(type_two);
+        task_two.addDeveloper(yeri);
+        task_two.addDeveloper(irene);
+        task_two.addDeveloper(seulgi);
         taskRepository.save(task_one);
         taskRepository.save(task_two);
     }

@@ -53,7 +53,11 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$[0].nbHoursForecast", is(0)))
                 .andExpect(jsonPath("$[0].nbHoursReal", is(0)))
                 .andExpect(jsonPath("$[0].created", is("2022-03-22")))
-                .andExpect(jsonPath("$[0].developers", is(Matchers.empty())))
+                .andExpect(jsonPath("$[0].developers[0].firstname", is("Yerim")))
+                .andExpect(jsonPath("$[0].developers[0].lastname", is("Kim")))
+                .andExpect(jsonPath("$[0].developers[0].password", is("Yeri")))
+                .andExpect(jsonPath("$[0].developers[0].email", is("rv_yeri@gmail.com")))
+                .andExpect(jsonPath("$[0].developers[0].startContract", is("1999-03-05")))
                 .andExpect(jsonPath("$[0].taskStatus.label", is("WORK_ON_PROGRESS")))
                 .andExpect(jsonPath("$[0].taskType.label", is("FEATURE_TO_CREATE")));
     }
