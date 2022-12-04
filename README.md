@@ -67,6 +67,12 @@ Clone the repository with SSH or HTTPS
 
 <img src="images/login.png" alt="Logo" width="300" height="400">
 
+### How to open Swagger UI
+
+1. Run the Kanban.java file
+
+2. Open [http://localhost:8080/kanbanboard/swagger-ui/](http://localhost:8080/kanbanboard/swagger-ui/)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
