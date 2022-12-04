@@ -1,5 +1,6 @@
 package leang.main.services.implementations;
 
+import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,5 +117,12 @@ public class TaskServiceImpl implements TaskService {
     public Task moveRightTask(Task task) {
         TaskStatus targetStatus = this.changeStatus(modifyRightNewStatus(task));
         return this.changeTask(task, targetStatus);
+    }
+    
+    public Task createTask(Task task) {
+        TaskStatus status = this.findTaskStatus(Status.STATUS_ONE_ID);
+        task.setTaskStatus(status);
+        task.setCreated(LocalDate.now());
+        return this.taskRepository.save(task);
     }
 }

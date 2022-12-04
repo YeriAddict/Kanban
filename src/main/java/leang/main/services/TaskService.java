@@ -20,5 +20,6 @@ public interface TaskService {
     public Task changeTask(Task task, TaskStatus outputStatus);
     public Task moveLeftTask(Task task);
     public Task moveRightTask(Task task);
+    public Task createTask(Task task);
     
 }

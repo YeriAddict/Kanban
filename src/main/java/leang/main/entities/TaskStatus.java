@@ -7,7 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity(name = "TASK_STATUS")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TaskStatus {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "taskstatus_generator")
